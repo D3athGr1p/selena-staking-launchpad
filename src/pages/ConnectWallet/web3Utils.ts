@@ -12,18 +12,21 @@ import {
   NETWORK_NAME,
   RPC_URL,
   TESTNET_LAUNCHPAD_NAME,
+  CUSTOM_NETWORK
 } from '../../utils/envVars';
 
 export enum NetworkChainId {
   'Mainnet' = 1,
   'Sepolia' = 11155111,
   'Holesky' = 17000,
+  'Custom' = CUSTOM_NETWORK as number
 }
 
 export const NetworkChainIdDict: { [id: string]: number } = {
   Mainnet: 1,
   Sepolia: 11155111,
   Holesky: 17000,
+  Custom: CUSTOM_NETWORK as number
 };
 
 /*
@@ -35,11 +38,13 @@ const supportedNetworks = [
   NetworkChainId.Mainnet,
   NetworkChainId.Sepolia,
   NetworkChainId.Holesky,
+  NetworkChainId.Custom,
 ];
 
 enum Testnet {
   'Sepolia',
   'Holesky',
+  'Custom'
 }
 
 enum Mainnet {
@@ -50,6 +55,7 @@ export const NetworkNameToChainId: { [key: string]: NetworkChainId } = {
   Holesky: NetworkChainId.Holesky,
   Mainnet: NetworkChainId.Mainnet,
   Sepolia: NetworkChainId.Sepolia,
+  Custom: NetworkChainId.Custom
 };
 
 export const TARGET_NETWORK_CHAIN_ID = IS_MAINNET

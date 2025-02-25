@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    image: raininfotech14/staking-launchpad:latest
+    container_name: staking-launchpad
+    working_dir: /app
+    volumes:
+      - ./.env:/app/.env 
+    command: sh -c "yarn start"
+#    environment:
+#      - NODE_ENV=development 
+    ports:
+      - "3000:3000" 
